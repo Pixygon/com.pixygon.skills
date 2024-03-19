@@ -1,0 +1,23 @@
+{
+  "name": "com.pixygon.skill",
+  "version": "0.5.0",
+  "displayName": "Pixygon - Skills",
+  "description": "Skill-system",
+  "unity": "2023.2",
+  "unityRelease": "14f1",
+  "documentationUrl": "https://www.pixygon.io/dev/micro",
+  "changelogUrl": "https://www.pixygon.io/dev/micro/changelog",
+  "licensesUrl": "https://www.pixygon.io/dev/micro/license",
+  "dependencies": {},
+"hideInEditor": false,
+ "keywords": [
+    "Pixygon",
+    "Skills",
+    "Tool"
+  ],
+  "author": {
+    "name": "Pixygon",
+    "email": "pixygon@pixygon.io",
+    "url": "https://www.pixygon.io"
+  }
+}

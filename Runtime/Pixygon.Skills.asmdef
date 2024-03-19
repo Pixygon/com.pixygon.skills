@@ -1,0 +1,16 @@
+{
+    "name": "Pixygon.Skills",
+    "rootNamespace": "Pixygon.Skills",
+    "references": [
+        "GUID:f3cd21784626a0443896989d027aeb46"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -15,9 +15,12 @@ namespace Pixygon.Skills {
         public int _bulletRipple;
         public float _projectileSize = .2f;
         public float _explosionChance;
+        public bool _timedBulletRipple;
+        public float _timedBulletRippleTime;
 
         public BulletData(float bulletKillTime, int damage, int hits, float knockback, float speed, bool fire,
-            bool earth, bool water, bool air, int bulletRipple, float projectileSize, float explosionChance) {
+            bool earth, bool water, bool air, int bulletRipple, float projectileSize, float explosionChance, bool timedBulletRipple, float timedBulletRippleTime)
+        {
             _bulletKillTime = bulletKillTime;
             _damage = damage;
             _hits = hits;
@@ -28,6 +31,8 @@ namespace Pixygon.Skills {
             _water = water;
             _air = air;
             _bulletRipple = bulletRipple;
+            _timedBulletRipple = timedBulletRipple;
+            _timedBulletRippleTime = timedBulletRippleTime;
             _projectileSize = projectileSize;
             _explosionChance = explosionChance;
         }
@@ -45,6 +50,8 @@ namespace Pixygon.Skills {
             _bulletRipple = bullet._bulletRipple;
             _projectileSize = bullet._projectileSize;
             _explosionChance = bullet._explosionChance;
+            _timedBulletRipple = bullet._timedBulletRipple;
+            _timedBulletRippleTime = bullet._timedBulletRippleTime;
         }
     }
 }

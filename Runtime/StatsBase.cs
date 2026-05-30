@@ -46,6 +46,9 @@ namespace Pixygon.Skills {
         EarthBall,
         WaterBall,
         Size,
+        HelperHp,
+        HelperDamage,
+        HelperSpeed,
     }
 
     public enum SpecialSkills {

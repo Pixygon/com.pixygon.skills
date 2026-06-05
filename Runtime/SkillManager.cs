@@ -12,7 +12,10 @@ namespace Pixygon.Skills {
         public List<SkillData> LearnedSkills { get; set; }
 
         private SkillData[] _allLevelUpSkills;
-        private int[] _levelUpSkillCategories = { 0, 1, 2, 3, 4, 5, 6, 7 };
+        // Category group-ids eligible for the random LEVEL-UP roll. Category 7
+        // (Weapons) is intentionally excluded — those are offered by the weaponsmith
+        // instead. Serialized so the pool is tunable per game without a package edit.
+        [SerializeField] private int[] _levelUpSkillCategories = { 0, 1, 2, 3, 4, 5, 6 };
 
         private void Awake() {
             var skillList = new List<SkillData>();
@@ -24,7 +27,6 @@ namespace Pixygon.Skills {
             }
 
             _allLevelUpSkills = skillList.ToArray();
-            //_allLevelUpSkills = (from list in _skills._categories from item in list._list select item as SkillData).ToArray();
             LearnedSkills = new List<SkillData>();
         }
 
@@ -66,35 +68,6 @@ namespace Pixygon.Skills {
         public void ScrambleSkills() {
             var skills = new List<SkillData>();
             var unlearntSkills = DoSkillScramble(_allLevelUpSkills.ToList(), LearnedSkills);
-            /*
-            var availableSkills = _allSkills.ToList();
-            var unlearntSkills = new List<SkillData>();
-            foreach (var skill in availableSkills) {
-                var skillLearnt = false;
-                var hasRequirement = false;
-                if (skill._requiredSkills != null) {
-                    if (skill._requiredSkills.Length != 0) {
-                        foreach (var rSkill in skill._requiredSkills) {
-                            if (LearnedSkills == null) continue;
-                            foreach (var learnedSkill in LearnedSkills.Where(learnedSkill => rSkill.GetFullID == learnedSkill.GetFullID)) {
-                                hasRequirement = true;
-                            }
-                        }
-                    }
-                    else
-                        hasRequirement = true;
-                }
-                else
-                    hasRequirement = true;
-                if (LearnedSkills != null) {
-                    foreach (var learnedSkill in LearnedSkills.Where(learnedSkill => skill.GetFullID == learnedSkill.GetFullID)) {
-                        skillLearnt = true;
-                    }
-                }
-                if(!skillLearnt && hasRequirement)
-                    unlearntSkills.Add(skill);
-            }
-            */
 
             for (var i = 0; i < 5; i++) {
                 if (unlearntSkills.Count == 0) {

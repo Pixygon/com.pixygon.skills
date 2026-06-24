@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Pixygon.ID;
 using UnityEngine;
@@ -18,6 +19,10 @@ namespace Pixygon.Skills {
         public int _rank;
         public bool _hideSkillRank;
         public bool _inYdrast;
+
+        [Tooltip("Codex lore — unlockable tiers shown in the Hub journal, gated on how many times this " +
+                 "skill has been acquired. Authored here on the asset; the Codex reads it directly.")]
+        public List<LoreTier> _loreTiers = new List<LoreTier>();
 
         public string Description =>
             $"{_description}\n" + (_hideSkillRank
